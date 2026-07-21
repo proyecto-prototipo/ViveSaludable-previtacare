@@ -1,0 +1,409 @@
+.patient-public-shell {
+  min-height: 100vh;
+  padding: clamp(1rem, 4vw, 3rem);
+  background:
+    radial-gradient(circle at top left, rgba(16,185,129,.16), transparent 28rem),
+    linear-gradient(180deg, #f7fbfe, #fff);
+}
+.patient-public-header { max-width: 980px; margin: 0 auto 1.2rem; display: flex; align-items: center; gap: .75rem; color: #12324a; }
+.patient-public-header p { margin: .1rem 0 0; color: var(--muted); }
+.brand-mark { width: 52px; height: 52px; border-radius: 18px; display: grid; place-items: center; background: linear-gradient(135deg, var(--primary), var(--secondary)); color: #fff; font-weight: 900; }
+.patient-card { max-width: 980px; margin: 0 auto; }
+.progress-wrap { height: 12px; border-radius: 999px; background: #e7f5fb; overflow: hidden; margin: 1rem 0; }
+.progress-bar { height: 100%; background: linear-gradient(90deg, var(--secondary), var(--accent)); border-radius: inherit; transition: width .2s ease; }
+.question-group { display: grid; gap: .75rem; }
+.question-box { border: 1px solid var(--border); border-radius: 20px; padding: 1rem; background: #fff; }
+.question-box strong { display: block; margin-bottom: .75rem; }
+.option-list { display: grid; gap: .55rem; }
+.option-item { display: flex; gap: .6rem; align-items: center; padding: .75rem .85rem; border: 1px solid #e7f0f6; border-radius: 16px; background: #fafdff; }
+.result-hero { text-align: center; max-width: 980px; margin: 0 auto 1rem; }
+.result-hero h1 { font-size: clamp(2rem, 5vw, 3.4rem); letter-spacing: -.06em; margin-bottom: .4rem; }
+.result-grid { max-width: 980px; margin: 0 auto; display: grid; gap: 1rem; }
+.disclaimer-box { background: #e0f2fe; color: #075985; border-radius: 18px; padding: 1rem; line-height: 1.55; }
+@media (max-width: 680px) { .patient-public-shell { padding: .85rem; } .question-box { padding: .85rem; } }
+
+
+/* =========================================
+   RESULTADO PACIENTE - REFUERZO IA
+   ========================================= */
+
+.patient-ai-card {
+  position: relative;
+  overflow: hidden;
+  display: grid;
+  gap: 1rem;
+  padding: clamp(1rem, 2.6vw, 1.35rem);
+  border-radius: 28px;
+  background:
+    radial-gradient(circle at 100% 0%, rgba(24, 183, 164, 0.14), transparent 15rem),
+    linear-gradient(180deg, #ffffff, #f8fffd);
+  border: 1px solid rgba(142, 219, 195, 0.7);
+  box-shadow: 0 24px 60px rgba(6, 68, 95, 0.09);
+}
+
+.patient-ai-card::before {
+  content: "";
+  position: absolute;
+  right: -4rem;
+  top: -4rem;
+  width: 170px;
+  height: 170px;
+  border-radius: 999px;
+  background: rgba(24, 183, 164, 0.08);
+}
+
+.patient-ai-card > * {
+  position: relative;
+  z-index: 2;
+}
+
+.patient-ai-header {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.patient-ai-icon {
+  width: 56px;
+  height: 56px;
+  display: grid;
+  place-items: center;
+  flex: 0 0 auto;
+  border-radius: 20px;
+  color: #ffffff;
+  background: linear-gradient(135deg, #06445f, #18b7a4);
+  box-shadow: 0 16px 34px rgba(6, 68, 95, 0.18);
+}
+
+.patient-ai-header span {
+  display: inline-flex;
+  width: fit-content;
+  margin-bottom: 0.28rem;
+  padding: 0.35rem 0.62rem;
+  border-radius: 999px;
+  color: #087f63;
+  background: #eafaf1;
+  font-size: 0.76rem;
+  font-weight: 950;
+}
+
+.patient-ai-header h2 {
+  margin: 0;
+  color: #102033;
+  font-size: clamp(1.25rem, 3vw, 1.55rem);
+  line-height: 1.1;
+  font-weight: 950;
+}
+
+.patient-ai-header p {
+  margin: 0.28rem 0 0;
+  color: #6a7a8e;
+  font-size: 0.82rem;
+  font-weight: 750;
+}
+
+.patient-ai-summary {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.55rem;
+  padding: 0.85rem;
+  border-radius: 18px;
+  color: #087f63;
+  background: #eafaf1;
+  border: 1px solid #c9f1d9;
+}
+
+.patient-ai-summary svg {
+  flex: 0 0 auto;
+  margin-top: 0.1rem;
+}
+
+.patient-ai-summary p {
+  margin: 0;
+  line-height: 1.45;
+  font-weight: 850;
+}
+
+.patient-ai-section {
+  padding: 0.95rem;
+  border-radius: 20px;
+  background: #ffffff;
+  border: 1px solid #e0ebf0;
+}
+
+.patient-ai-section h3,
+.patient-ai-tests h3,
+.patient-ai-alerts h3 {
+  margin: 0 0 0.5rem;
+  color: #102033;
+  font-size: 1rem;
+  font-weight: 950;
+}
+
+.patient-ai-section p {
+  margin: 0;
+  color: #506174;
+  line-height: 1.55;
+  font-weight: 700;
+}
+
+.patient-ai-tests {
+  display: grid;
+  gap: 0.65rem;
+}
+
+.patient-ai-test {
+  display: grid;
+  gap: 0.45rem;
+  padding: 0.9rem;
+  border-radius: 20px;
+  background: #ffffff;
+  border: 1px solid #d9f3e4;
+}
+
+.patient-ai-test div {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.75rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.patient-ai-test strong {
+  color: #06445f;
+  font-size: 0.98rem;
+  font-weight: 950;
+}
+
+.patient-ai-test span {
+  padding: 0.28rem 0.5rem;
+  border-radius: 999px;
+  color: #087f63;
+  background: #eafaf1;
+  font-size: 0.72rem;
+  font-weight: 900;
+  text-transform: capitalize;
+}
+
+.patient-ai-test p {
+  margin: 0;
+  color: #506174;
+  line-height: 1.45;
+  font-size: 0.88rem;
+  font-weight: 700;
+}
+
+.patient-ai-alerts {
+  display: grid;
+  gap: 0.5rem;
+  padding: 0.95rem;
+  border-radius: 20px;
+  color: #7a4b00;
+  background: #fff8e6;
+  border: 1px solid #f8e3a1;
+}
+
+.patient-ai-alerts h3 {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  color: #7a4b00;
+}
+
+.patient-ai-alerts p {
+  margin: 0;
+  color: #7a4b00;
+  line-height: 1.45;
+  font-size: 0.86rem;
+  font-weight: 800;
+}
+
+.patient-ai-disclaimer {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.55rem;
+  padding: 0.8rem;
+  border-radius: 18px;
+  color: #005e69;
+  background: #e7f8fb;
+  border: 1px solid #c8edf3;
+  font-size: 0.82rem;
+  line-height: 1.45;
+  font-weight: 850;
+}
+
+.patient-ai-disclaimer svg {
+  flex: 0 0 auto;
+  margin-top: 0.05rem;
+}
+
+.patient-ai-loading {
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  background:
+    radial-gradient(circle at 100% 0%, rgba(24, 183, 164, 0.12), transparent 12rem),
+    #f7fffd;
+}
+
+.patient-ai-loading .patient-ai-icon {
+  animation: patientAISoftPulse 1.4s ease-in-out infinite;
+}
+
+.patient-ai-loading h3,
+.patient-ai-error h3 {
+  margin: 0;
+  color: #102033;
+  font-size: 1rem;
+  font-weight: 950;
+}
+
+.patient-ai-loading p,
+.patient-ai-error p {
+  margin: 0.25rem 0 0;
+  color: #65758a;
+  line-height: 1.45;
+  font-weight: 750;
+}
+
+.patient-ai-error {
+  grid-template-columns: auto 1fr;
+  align-items: flex-start;
+  border-color: #ffd6d0;
+  background: #fff7f5;
+}
+
+.patient-ai-error .patient-ai-icon {
+  background: linear-gradient(135deg, #b42318, #f97316);
+}
+
+.patient-ai-error span {
+  display: block;
+  margin-top: 0.45rem;
+  color: #7a4b00;
+  font-size: 0.82rem;
+  line-height: 1.4;
+  font-weight: 800;
+}
+
+@keyframes patientAISoftPulse {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 16px 34px rgba(6, 68, 95, 0.18);
+  }
+
+  50% {
+    transform: scale(1.04);
+    box-shadow: 0 20px 42px rgba(6, 68, 95, 0.25);
+  }
+}
+
+@media (max-width: 700px) {
+  .patient-ai-header {
+    align-items: flex-start;
+  }
+
+  .patient-ai-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 17px;
+  }
+
+  .patient-ai-loading,
+  .patient-ai-error {
+    grid-template-columns: 1fr;
+  }
+
+  .patient-ai-test div {
+    align-items: flex-start;
+  }
+}
+
+
+
+
+/* =========================================
+   PUBLIC FORM LAYOUT - LOGO
+   ========================================= */
+
+.public-page {
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at 0% 0%, rgba(24, 183, 164, 0.16), transparent 22rem),
+    linear-gradient(180deg, #f9fcff 0%, #eefbfc 100%);
+  padding: clamp(1.25rem, 3vw, 2.2rem);
+}
+
+.public-container {
+  width: min(100%, 980px);
+  margin: 0 auto;
+}
+
+.public-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  margin-bottom: clamp(2rem, 5vw, 3.2rem);
+}
+
+.public-brand-badge {
+  width: 56px;
+  height: 56px;
+  display: grid;
+  place-items: center;
+  flex: 0 0 auto;
+  padding: 0.35rem;
+  border-radius: 19px;
+  background: #ffffff;
+  border: 1px solid rgba(216, 232, 238, 0.9);
+  box-shadow: 0 16px 34px rgba(6, 68, 95, 0.12);
+  overflow: hidden;
+}
+
+.public-brand-logo {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.public-brand-text {
+  display: grid;
+  gap: 0.15rem;
+}
+
+.public-brand-text strong {
+  color: #102033;
+  font-size: 1.02rem;
+  font-weight: 950;
+  line-height: 1;
+}
+
+.public-brand-text span {
+  color: #516987;
+  font-size: 0.98rem;
+  font-weight: 650;
+}
+
+@media (max-width: 640px) {
+  .public-page {
+    padding: 1rem;
+  }
+
+  .public-brand {
+    margin-bottom: 1.6rem;
+  }
+
+  .public-brand-badge {
+    width: 50px;
+    height: 50px;
+    border-radius: 17px;
+  }
+
+  .public-brand-text strong {
+    font-size: 0.96rem;
+  }
+
+  .public-brand-text span {
+    font-size: 0.85rem;
+  }
+}
